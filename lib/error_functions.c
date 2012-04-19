@@ -4,7 +4,7 @@
 #include "ename.c.inc"   /* Defines ename and MAX_ENAME */
 
 #ifdef __GNUC__
-__atribute__ ((__noreturn__))
+__attribute__ ((__noreturn__))
 #endif
 static void
 terminate(Boolean useExit3)
@@ -20,9 +20,9 @@ terminate(Boolean useExit3)
 	if ( s != NULL && *s != '\0' )
 		abort();
 	else if (useExit3)
-		exit(EXIT_FAILURE)
+		exit(EXIT_FAILURE);
 	else
-		_exit(EXIT_FAILURE)
+		_exit(EXIT_FAILURE);
 }
 
 static void
@@ -117,7 +117,7 @@ usageErr(const char *format, ...)
 {
 	va_list argList;
 
-	fflust(stdout);   /* Flush any pending stdout */
+	fflush(stdout);   /* Flush any pending stdout */
 
 	fprintf(stderr, "Usage: ");
 	va_start(argList, format);
